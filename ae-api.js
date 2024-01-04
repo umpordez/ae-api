@@ -81,9 +81,9 @@ class AliexpressClient {
 
         url += pathname;
 
-        body.app_key = this.appKey;
-        body.sign_method = 'sha256';
-        body.timestamp = new Date().getTime();
+        body.app_key = body.app_key || this.appKey;
+        body.sign_method = body.sign_method || 'sha256';
+        body.timestamp = body.timestamp || new Date().getTime();
 
         body.target_language = this.defaultLanguage;
         body.ship_to_country = this.defaultShipCountry;
