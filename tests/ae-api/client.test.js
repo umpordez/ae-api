@@ -101,7 +101,7 @@ describe('Aliexpress Client', () => {
         assert(token);
     });
 
-    it.skip('getProduct', async () => {
+    it('getProduct', async () => {
         const client = new AeClient(
             'dev',
             TEST_APP_KEY,

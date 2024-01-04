@@ -89,10 +89,7 @@ class AliexpressClient {
         body.ship_to_country = this.defaultShipCountry;
         body.target_currency = this.defaultCurrency;
 
-        const signature = this.getSignatureByParams(
-            pathname !== '/sync' ? pathname : '',
-            body
-        );
+        const signature = this.getSignatureByParams(pathname, body);
 
         const data = querystring.stringify({
             ...body,
