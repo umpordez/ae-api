@@ -1,0 +1,37 @@
+{
+    "name": "ae-api",
+    "version": "0.0.1",
+    "description": "Aliexpress API",
+    "main": "ae-api.js",
+    "keywords": [
+        "aliexpress",
+        "aliexpress rest",
+        "aliexpress api",
+        "ae api",
+        "ae rest",
+        "ae sdk"
+    ],
+    "author": "Deividy Metheler Zachetti <deividyz@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "test": "./node_modules/mocha/bin/mocha.js tests/**/*/*.test.js --no-timeout",
+        "lint": "DEBUG=eslint:cli-engine ./node_modules/eslint/bin/eslint.js tests/ ae-api.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/umpordez/ae-api.git"
+    },
+    "bugs": {
+        "url": "https://github.com/umpordez/ae-api/issues"
+    },
+    "homepage": "https://github.com/umpordez/ae-api",
+    "dependencies": {
+        "argument-validator": "^0.1.0",
+        "axios": "^0.27.2"
+    },
+    "devDependencies": {
+        "dotenv": "^16.0.0",
+        "eslint": "^8.25.0",
+        "mocha": "^10.0.0"
+    }
+}
