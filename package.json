@@ -1,6 +1,6 @@
 {
     "name": "ae-api",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "Aliexpress API",
     "main": "ae-api.js",
     "keywords": [
@@ -9,7 +9,9 @@
         "aliexpress api",
         "ae api",
         "ae rest",
-        "ae sdk"
+        "ae sdk",
+        "aliexpress simple",
+        "aliexpress simplest api"
     ],
     "author": "Deividy Metheler Zachetti <deividyz@gmail.com>",
     "license": "MIT",
