@@ -100,7 +100,9 @@ class AliexpressClient {
         });
 
         const options = { url, data, method: 'POST', headers };
+
         this.lastRequest = { ...options };
+        this.lastRequests.push({ ...this.lastRequest });
 
         let response;
         const { stack } = new Error();
@@ -130,14 +132,15 @@ class AliexpressClient {
             }
         } catch (ex) {
             ex.response = ex.response || ex.res;
+            this.lastResponse = { error: ex.message };
+
             if (ex.response) {
                 const { response } = ex;
+
                 this.lastResponse = {
                     body: response.data,
                     headers: response.headers
                 };
-
-                this.lastResponses.push(this.lastResponse);
 
                 if (response.data && response.data.error_message) {
                     ex.message = response.data.error_message;
@@ -145,6 +148,8 @@ class AliexpressClient {
                     ex.message += `\n${response.data}`;
                 }
             }
+
+            this.lastResponses.push({ ...this.lastResponse });
 
             ex.stack = stack;
             throw ex;
