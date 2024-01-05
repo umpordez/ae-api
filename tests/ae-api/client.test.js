@@ -101,6 +101,7 @@ describe('Aliexpress Client', () => {
         assert(token);
     });
 
+
     it.skip('getProduct', async () => {
         const client = new AeClient(
             'dev',
@@ -120,6 +121,119 @@ describe('Aliexpress Client', () => {
 
         assert(response);
         const res = response.aliexpress_ds_product_get_response;
+
+		/* eslint-disable max-len */
+		//   {
+		//   	"result": {
+		//   		"ae_item_sku_info_dtos": {
+		//   			"ae_item_sku_info_d_t_o": [
+		//   				{
+		//   					"offer_sale_price": "54.69",
+		//   					"ipm_sku_stock": 492,
+		//   					"sku_stock": true,
+		//   					"sku_id": "12000035530517031",
+		//   					"currency_code": "BRL",
+		//   					"sku_price": "71.02",
+		//   					"offer_bulk_sale_price": "54.69",
+		//   					"sku_available_stock": 492,
+		//   					"id": "14:200006151#400ml",
+		//   					"sku_code": "LA60234889A1",
+		//   					"ae_sku_property_dtos": {
+		//   						"ae_sku_property_d_t_o": [
+		//   							{
+		//   								"sku_property_value": "Light Grey",
+		//   								"sku_image": "https://ae01.alicdn.com/kf/S97a9922754d14e70819efa44c16862baH.jpg",
+		//   								"sku_property_name": "Color",
+		//   								"property_value_definition_name": "400ml",
+		//   								"property_value_id": 200006151,
+		//   								"sku_property_id": 14
+		//   							}
+		//   						]
+		//   					}
+		//   				}
+		//   			]
+		//   		},
+		//   		"ae_multimedia_info_dto": {
+		//   			"image_urls": "https://ae01.alicdn.com/kf/S10aaab919e484b0591ea56cee0dedf3ak.jpg;https://ae01.alicdn.com/kf/Sd6b5ce0098204e9995c1ae1440697d80g.jpg;https://ae01.alicdn.com/kf/Sa38f9ab1dd6245b898d31fb3626d0dafP.jpg;https://ae01.alicdn.com/kf/Sbb0ebdf6338a42e0a8d0ba3f74910e8fz.jpg;https://ae01.alicdn.com/kf/S0dacf61af058405d83300d623772b8606.jpg;https://ae01.alicdn.com/kf/S80ad107790564e1dbdb627952e5445a0R.jpg"
+		//   		},
+		//   		"package_info_dto": {
+		//   			"package_width": 15,
+		//   			"package_height": 28,
+		//   			"package_length": 18,
+		//   			"gross_weight": "0.900",
+		//   			"package_type": false,
+		//   			"product_unit": 100000015
+		//   		},
+		//   		"logistics_info_dto": {
+		//   			"delivery_time": 7,
+		//   			"ship_to_country": "BR"
+		//   		},
+		//   		"product_id_converter_result": {
+		//   			"main_product_id": 1005006057059635,
+		//   			"sub_product_id": "{\"US\":3256805870744883}"
+		//   		},
+		//   		"ae_item_base_info_dto": {
+		//   			"gmt_create": "2023-09-19 15:20:13",
+		//   			"subject": "Portátil USB Mini Espremedor Elétrico, Misturador De Frutas, Liquidificador Recarregável, Fruta, Fabricante De Suco Fresco, Copo De Limão, Máquina Doméstica",
+		//   			"evaluation_count": "1",
+		//   			"sales_count": "7",
+		//   			"product_status_type": "onSelling",
+		//   			"avg_evaluation_rating": "1.0",
+		//   			"gmt_modified": "2024-01-03 03:06:52",
+		//   			"currency_code": "CNY",
+		//   			"owner_member_seq_long": 2675378076,
+		//   			"category_id": 200301151,
+		//   			"product_id": 1005006057059635,
+		//   			"detail": "<div class=\"detailmodule_html\"><div class=\"detail-desc-decorate-richtext\"><p><br /></p> \n<p><span style=\"background-color:rgb(255, 255, 255);color:rgb(0, 0, 0)\" id=\"tl_1\">Especifica&ccedil;&atilde;o:</span></p> \n<p><span style=\"background-color:rgb(255, 255, 255);color:rgb(0, 0, 0)\" id=\"tl_2\">Materiais: ABS + COMO</span></p> \n<p><span style=\"background-color:rgb(255, 255, 255);color:rgb(0, 0, 0)\" id=\"tl_3\">Tamanho: 13,8*11,2*23,75 cm/5,4*4,4 * 9in</span></p> \n<p><span style=\"background-color:rgb(255, 255, 255);color:rgb(0, 0, 0)\" id=\"tl_4\">Energia: 45W</span></p> \n<p><span style=\"background-color:rgb(255, 255, 255);color:rgb(0, 0, 0)\" id=\"tl_5\">Tens&atilde;o: 7.4V</span></p> \n<p><span style=\"background-color:rgb(255, 255, 255);color:rgb(0, 0, 0)\" id=\"tl_6\">Carregamento: carregamento USB</span></p> \n<p><span style=\"background-color:rgb(255, 255, 255);color:rgb(0, 0, 0)\" id=\"tl_7\">Peso: 1100g</span></p> \n<p><span style=\"background-color:rgb(255, 255, 255);color:rgb(0, 0, 0)\" id=\"tl_8\">Materiais: ABS/COMO</span></p> \n<p><span style=\"background-color:rgb(255, 255, 255);color:rgb(0, 0, 0)\" id=\"tl_9\">Fun&ccedil;&atilde;o: Totalmente autom&aacute;tico</span></p> \n<p><span style=\"background-color:rgb(255, 255, 255);color:rgb(0, 0, 0)\" id=\"tl_10\">Capacidade: ≤ 400ml</span></p> \n<p><span style=\"background-color:rgb(255, 255, 255);color:rgb(0, 0, 0)\" id=\"tl_11\">Rendimento m&aacute;ximo do suco ao mesmo tempo: ≤ 400ml</span></p> \n<p><span style=\"background-color:rgb(255, 255, 255);color:rgb(0, 0, 0)\" id=\"tl_12\">Tipo do cortador: Cortador dobro</span></p> \n<p><span style=\"background-color:rgb(255, 255, 255);color:rgb(0, 0, 0)\" id=\"tl_13\">Capacidade caixa res&iacute;duo polpa: ≤ 500ml</span></p> \n<p><span style=\"background-color:rgb(255, 255, 255);color:rgb(0, 0, 0)\" id=\"tl_14\">Velocidade: 18000 rpm</span></p> \n<p><span style=\"background-color:rgb(255, 255, 255);color:rgb(0, 0, 0)\" id=\"tl_15\">Use: Suco De Laranja, suco De Rom&atilde;, suco De Ma&ccedil;&atilde;, suco De Uva, suco De Melancia</span></p> \n<p><br /></p> \n<p><span style=\"background-color:rgb(255, 255, 255);color:rgb(0, 0, 0)\" id=\"tl_16\">Nota:</span></p> \n<p><span style=\"background-color:rgb(255, 255, 255);color:rgb(0, 0, 0)\" id=\"tl_17\">Devido ao monitor diferente e efeito de luz, a cor real do item pode ser ligeiramente diferente da cor mostrada nas fotos. -Obrigado!</span></p> \n<p><br /></p> \n<p><span style=\"background-color:rgb(255, 255, 255);color:rgb(0, 0, 0)\" id=\"tl_18\">Por favor aguarde 1-2cm medi&ccedil;&atilde;o desvio devido &agrave; medi&ccedil;&atilde;o manual.</span></p> \n<p><br /></p> \n<p><span style=\"background-color:rgb(255, 255, 255);color:rgb(0, 0, 0)\" id=\"tl_19\">Pacakge inclui:</span></p> \n<p><span style=\"background-color:rgb(255, 255, 255);color:rgb(0, 0, 0)\" id=\"tl_20\">1 x Mini Fruit Mixer</span></p> \n<p><span style=\"background-color:rgb(255, 255, 255);color:rgb(0, 0, 0)\" id=\"tl_21\">1 x cabo USB</span></p> \n<p><br /></p> \n<p><br /></p> \n<p><img src=\"https://ae01.alicdn.com/kf/Sa38f9ab1dd6245b898d31fb3626d0dafP.jpg\" slate-data-type=\"image\" /><img src=\"https://ae01.alicdn.com/kf/Sbb0ebdf6338a42e0a8d0ba3f74910e8fz.jpg\" slate-data-type=\"image\" /><img src=\"https://ae01.alicdn.com/kf/S1119572c39c54106ac63960855aa1620A.jpg\" slate-data-type=\"image\" /><img src=\"https://ae01.alicdn.com/kf/S0dacf61af058405d83300d623772b8606.jpg\" slate-data-type=\"image\" /><img src=\"https://ae01.alicdn.com/kf/S3d43c09827494fd79ab91ab098fb653aN.jpg\" slate-data-type=\"image\" /><img src=\"https://ae01.alicdn.com/kf/Sd6b5ce0098204e9995c1ae1440697d80g.jpg\" slate-data-type=\"image\" /><img src=\"https://ae01.alicdn.com/kf/Sd8d8e245661b4087a72006fb118605ef4.jpg\" slate-data-type=\"image\" /></p> \n<p><br /></p></div></div>\r\n"
+		//   		},
+		//   		"ae_item_properties": {
+		//   			"ae_item_property": [
+		//   				{
+		//   					"attr_name_id": 2,
+		//   					"attr_value_id": 9275262276,
+		//   					"attr_name": "Brand Name",
+		//   					"attr_value": "isfriday"
+		//   				},
+		//   				{
+		//   					"attr_name_id": 219,
+		//   					"attr_value_id": 9441741844,
+		//   					"attr_name": "Origin",
+		//   					"attr_value": "Mainland China"
+		//   				},
+		//   				{
+		//   					"attr_name_id": 10,
+		//   					"attr_value_id": 351785,
+		//   					"attr_name": "Material",
+		//   					"attr_value": "ABS"
+		//   				},
+		//   				{
+		//   					"attr_name_id": 3,
+		//   					"attr_value_id": -1,
+		//   					"attr_name": "Model Number",
+		//   					"attr_value": "Mini Electric Juicer"
+		//   				},
+		//   				{
+		//   					"attr_name_id": 326,
+		//   					"attr_value_id": 202965839,
+		//   					"attr_name": "Style",
+		//   					"attr_value": "Vertical"
+		//   				}
+		//   			]
+		//   		},
+		//   		"ae_store_info": {
+		//   			"store_id": 1102923213,
+		//   			"shipping_speed_rating": "4.3",
+		//   			"communication_rating": "4.1",
+		//   			"store_name": "Isfriday CH Store",
+		//   			"store_country_code": "CN",
+		//   			"item_as_described_rating": "4.0"
+		//   		}
+		//   	},
+		//   	"rsp_code": 200,
+		//   	"rsp_msg": "Call succeeds",
+		//   	"request_id": "2140fa3517044610955631799"
+		//   }
+		/* eslint-enable max-len */
 
         assert(res.rsp_msg === 'Call succeeds');
         assert(res.rsp_code === 200);

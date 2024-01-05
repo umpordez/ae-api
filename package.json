@@ -1,6 +1,6 @@
 {
     "name": "ae-api",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Aliexpress API",
     "main": "ae-api.js",
     "keywords": [
@@ -29,7 +29,7 @@
     "homepage": "https://github.com/umpordez/ae-api",
     "dependencies": {
         "argument-validator": "^0.1.0",
-        "axios": "^0.27.2"
+        "axios": "^1.6.4"
     },
     "devDependencies": {
         "dotenv": "^16.0.0",
