@@ -40,6 +40,10 @@ function getSignatureByParams(appSecret, pathname, params) {
     return getHmacsha256Hex(appSecret, str).toUpperCase();
 }
 
+function isObject(value) {
+    return value && Object.prototype.toString.call(value) === '[object Object]';
+}
+
 
 class AliexpressClient {
     constructor(env, appKey, appSecret, accessToken) {
@@ -93,6 +97,10 @@ class AliexpressClient {
             if (body[key] === undefined) {
                 delete body[key];
             }
+
+            if (isObject(body[key])) {
+                body[key] = JSON.stringify(body[key]);
+            }
         }
 
         const signature = this.getSignatureByParams(pathname, body);
@@ -104,7 +112,7 @@ class AliexpressClient {
 
         const options = { url, data, method: 'POST', headers };
 
-        this.lastRequest = { ...options };
+        this.lastRequest = { ...options, ...body };
         this.lastRequests.push({ ...this.lastRequest });
 
         let response;
