@@ -93,26 +93,28 @@ class AliexpressClient {
         body.ship_to_country = this.defaultShipCountry;
         body.target_currency = this.defaultCurrency;
 
+        const bodyData = {};
         for (const key in body) {
-            if (body[key] === undefined) {
-                delete body[key];
-            }
+            if (body[key] === undefined) { continue; }
 
             if (isObject(body[key])) {
-                body[key] = JSON.stringify(body[key]);
+                bodyData[key] = JSON.stringify(body[key]);
+                continue;
             }
+
+            bodyData[key] = body[key];
         }
 
         const signature = this.getSignatureByParams(pathname, body);
 
         const data = querystring.stringify({
-            ...body,
+            ...bodyData,
             sign: signature
         });
 
         const options = { url, data, method: 'POST', headers };
 
-        this.lastRequest = { ...options, ...body };
+        this.lastRequest = { ...options, ...body, data: bodyData };
         this.lastRequests.push({ ...this.lastRequest });
 
         let response;
