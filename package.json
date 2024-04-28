@@ -1,6 +1,6 @@
 {
     "name": "ae-api",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "Aliexpress API",
     "main": "ae-api.js",
     "keywords": [
