@@ -32,11 +32,16 @@ function getSignatureByParams(appSecret, pathname, params) {
     keys.sort((a, b) => a.localeCompare(b));
 
     for (const key of keys) {
-        parts.push(`${key}${params[key]}`);
+        let value = params[key];
+
+        if (V.isObject(value)) {
+            value = JSON.stringify(value);
+        }
+
+        parts.push(`${key}${value}`);
     }
 
     const str = parts.join('');
-
     return getHmacsha256Hex(appSecret, str).toUpperCase();
 }
 
